@@ -18,7 +18,11 @@ ways, but also attempts to provide an object-oriented interface to all
 of the Ruby C API.
   END
 
-  s.extensions = ['extconf.rb']
+  if /mswin/ =~ RbConfig::CONFIG['host_os']
+    s.extensions = ['mswin/extconf.rb']
+  else
+    s.extensions = ['extconf.rb']
+  end
 
   s.test_files = [
     'test/test_rice.rb',
@@ -33,6 +37,7 @@ of the Ruby C API.
     'COPYING',
     'README',
     'README.mingw',
+    'README.mswin.md',
 
     # Doxygen
     'Doxyfile',
@@ -40,6 +45,7 @@ of the Ruby C API.
     'doxygen.am',
 
     'extconf.rb',
+    'mswin/extconf.rb',
 
     # Autoconf
     'bootstrap',
@@ -82,6 +88,7 @@ of the Ruby C API.
 
     # Library files
     'ruby/lib/mkmf-rice.rb.in',
+    'mswin/ruby/lib/mkmf-rice.rb',
     'ruby/lib/version.rb',
 
     # Samples

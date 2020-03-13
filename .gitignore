@@ -21,6 +21,7 @@ pkg
 .deps
 *~
 .*.swp
+*.bak
 doc
 *.dSYM
 *.bundle
@@ -35,3 +36,6 @@ ruby/lib/lib
 
 Gemfile.lock
 .dirstamp
+
+ext
+CMakeLists.txt
