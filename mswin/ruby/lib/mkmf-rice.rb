@@ -1,5 +1,4 @@
-# extconf.rb
-
+require 'mkmf'
 require 'rbconfig'
 
 $RICE_PREFIX = File.join(File.dirname(File.expand_path(__FILE__)))
